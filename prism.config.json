@@ -1,0 +1,84 @@
+{
+  "server": {
+    "port": 3200,
+    "host": "0.0.0.0",
+    "cors": true
+  },
+  "providers": [
+    {
+      "name": "openrouter",
+      "enabled": true,
+      "priority": 1,
+      "apiKey": "${OPENROUTER_API_KEY}",
+      "baseUrl": "https://openrouter.ai/api/v1"
+    },
+    {
+      "name": "openai",
+      "enabled": false,
+      "priority": 2,
+      "apiKey": "${OPENAI_API_KEY}",
+      "baseUrl": "https://api.openai.com/v1"
+    },
+    {
+      "name": "anthropic",
+      "enabled": false,
+      "priority": 3,
+      "apiKey": "${ANTHROPIC_API_KEY}",
+      "baseUrl": "https://api.anthropic.com/v1"
+    },
+    {
+      "name": "custom",
+      "enabled": false,
+      "priority": 4,
+      "apiKey": "${CUSTOM_API_KEY}",
+      "baseUrl": "http://localhost:8080/v1"
+    }
+  ],
+  "prompts": {
+    "layers": {
+      "identity": true,
+      "metaCognitive": false,
+      "truth": true,
+      "ethics": true,
+      "safety": true,
+      "refusal": true,
+      "output": true,
+      "chainOfThought": false,
+      "persona": false,
+      "multilingual": false,
+      "memory": false,
+      "constraint": false,
+      "empathy": false,
+      "logic": false,
+      "creativity": false,
+      "selfCorrection": false,
+      "tokenOpt": true,
+      "training": false,
+      "directive": false
+    }
+  },
+  "escalation": {
+    "enabled": true,
+    "maxLevel": 8,
+    "strategies": [
+      "rephrase",
+      "decompose",
+      "contextShift",
+      "semanticReframe",
+      "linguisticDrift",
+      "conceptualMapping",
+      "narrativeEmbedding",
+      "metaPrompting"
+    ]
+  },
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "file": null,
+    "requests": true
+  },
+  "plugins": {
+    "directory": ".prism",
+    "enabled": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "prism-proxy",
+  "version": "1.0.0",
+  "description": "Modular, professional TypeScript/Bun AI research proxy",
+  "type": "module",
+  "main": "src/index.ts",
+  "bin": {
+    "prism": "./src/cli.ts"
+  },
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "build": "bun build src/index.ts --outdir dist"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "typescript": "^5.5.0"
+  },
+  "keywords": [
+    "ai",
+    "proxy",
+    "llm",
+    "openrouter",
+    "anthropic",
+    "openai",
+    "research"
+  ],
+  "author": "RootBugs",
+  "license": "MIT"
+}
